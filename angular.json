@@ -71,6 +71,9 @@
               "browserTarget": "Coworking:build:development"
             }
           },
+          "options": {
+            "browserTarget": "Coworking:build:development"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
@@ -100,5 +103,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "d10277c7-8392-45aa-a547-34f4877b1bbb"
   }
 }
