@@ -13,7 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   title = "Login";
 
@@ -26,7 +26,12 @@ export class LoginComponent {
     this.credentialLogin = new CredentialLogin();
   }
 
-  login(): void {
+  ngOnInit(): void {
+    sessionStorage.removeItem("0");
+    console.log("Start");
+  }
+
+  /*login(): void {
     this.credentialLogin.email.trim();
     this.credentialLogin.password.trim();
 
@@ -34,6 +39,38 @@ export class LoginComponent {
       sessionStorage.setItem("0", JSON.stringify(result));
       this.router.navigate(['map']);
     });
+  }*/
+
+  getProtectedData() {  //переход к карте
+    this.authService.getProtectedResource().subscribe(
+      data => {
+        console.log('Protected data:', data);
+      },
+      error => {
+        console.error('Error fetching protected data', error);
+      }
+    );
+  }
+  onLogin() {
+    this.authService.loginCredential(this.credentialLogin.email, this.credentialLogin.password).subscribe(
+      response => {
+        console.log('Login successful!', response.token);
+        localStorage.setItem('jwt', response.token);
+        console.log(localStorage.getItem('jwt'));
+        this.authService.getProtectedResource().subscribe(
+          response => {
+            console.log('response workspaceGet: ' + response);
+            this.router.navigate(['map']);
+          },
+          error => {
+            console.error('Login failed', error);
+          }
+        );
+      },
+      error => {
+        console.error('Login failed', error);
+      }
+    );
   }
 
 }

@@ -17,12 +17,17 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   loginCredential(email: string, password: string): Observable<any> {
-    return this.http.post<any>(`/login`, {email, password})
-    .pipe(
+    const body = {
+      username: email,
+      password: password
+    };
+
+    return this.http.post<any>(`/api/login`, body)
+    /*.pipe(
       tap((response: { token: string; }) => {
         localStorage.setItem('jwt', response.token);
       })
-    )
+    )*/
   }
 
   getToken(): string | null {
@@ -37,7 +42,10 @@ export class AuthService {
 
   // Пример метода для получения защищенного ресурса
   getProtectedResource(): Observable<any> {
-    return this.http.get('/api/hello', {
+    /*return this.http.get('/api/hello', {
+      headers: this.getAuthHeaders()
+    });*/
+    return this.http.get('/api/workspace', {
       headers: this.getAuthHeaders()
     });
   }
