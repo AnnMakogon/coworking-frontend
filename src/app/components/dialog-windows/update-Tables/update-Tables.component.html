@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Apdate Table</h1>
+<div mat-dialog-content style="display: online; padding: 0px; margin:auto">
+  <mat-form-field class="full-width-input">
+    <input matInput type="text" placeholder="New Description" [(ngModel)]="editingTable.description" required>
+  </mat-form-field>
+  <mat-form-field class="full-width-input">
+    <input matInput type="number" placeholder="New PhoneNumber of Student" [(ngModel)]="editingTable.price"
+      required>
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">Cancel</button>
+  <button class="right-align" mat-raised-button color="primary" [mat-dialog-close]="editingTable">Update</button>
+</div>

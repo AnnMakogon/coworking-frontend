@@ -1,2 +1,37 @@
-<p>map works!</p>
-{{title}}
+<div class="map-container">
+  <div class="logo-sidebar">
+    <div class="logo">
+      LOGO
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-content">
+        <mat-sidenav-container class="example-container">
+          <mat-sidenav mode="side" opened>
+            <mat-nav-list>
+              <a mat-list-item routerLink="myWorkspaces"></a>
+            </mat-nav-list>
+          </mat-sidenav>
+          <mat-sidenav-content>
+            <div class="content">
+              <router-outlet></router-outlet>
+            </div>
+          </mat-sidenav-content>
+        </mat-sidenav-container>
+      </div>
+    </div>
+  </div>
+  <div id="map" class="map"></div>
+
+  <button class="create-workspace-button" mat-raised-button (click)="createWorkspace()">Create workspace</button>
+
+  <button class="info-button" mat-raised-button (click)="dropDownWindow()">
+    <span class="icon">account_circle</span>
+  </button>
+
+  <div class="dropDown" *ngIf="isDropWindowVisible">
+    <div class="drop-content">
+      <button (click)="logout()" class="material-icons"> logout</button>
+      <button class="material-icons-outlined" (click)="dropDownWindow()">close</button>
+    </div>
+  </div>
+</div>

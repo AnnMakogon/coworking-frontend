@@ -1,0 +1,155 @@
+.map {
+  width: 1200px;
+  height: 730px;
+  flex-grow: 1;
+  background-color: #f0f0f0;
+}
+
+.map-container {
+  display: flex;
+  height: 100%;
+}
+
+.logo-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 350px; /* ширина логотипа и плашки */
+}
+
+.logo {
+  background-color: #f7f7f7; /* фон логотипа */
+  padding: 20px; /* отступы внутри логотипа */
+  border: 1px solid #ddd; /* границы со всех сторон */
+  text-align: center; /* выравнивание текста по центру */
+}
+
+.sidebar {
+  /* flex: 1; занимает оставшееся пространство */
+  width: 370px;
+  height: 670px;
+  background-color: #f7f7f7; /* фон плашки */
+  border: 1px solid #ddd; /* границы со всех сторон */
+}
+
+.sidebar-content {
+  width: 370px;
+  height: 670px;
+}
+
+.create-workspace-button {
+  position: absolute; /* Позволяет позиционировать элемент относительно ближайшего родителя с position: relative */
+  top: 10px; /* Отступ сверху */
+  right: 110px; /* Отступ справа */
+  background-color:#007bff !important; /* Синий цвет фона */
+  color: white !important; /* Белый цвет текста */
+  border: none; /* Убираем рамку */
+  padding: 10px 20px; /* Внутренние отступы для кнопки */
+  border-radius: 5px; /* Закругление углов */
+  cursor: pointer; /* Указатель при наведении */
+  z-index: 1000; /* Убедитесь, что кнопка находится поверх других элементов */
+}
+
+.create-workspace-button:hover {
+  background-color: darkblue; /* Темно-синий цвет при наведении */
+}
+
+.info-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #007bff !important;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 1000; /* Делаем кнопку поверх карты */
+  font-family: 'Material Icons' !important;
+  display: flex; /* Используем flex для выравнивания */
+  align-items: center; /* Выравнивание по центру по вертикали */
+  justify-content: center; /* Выравнивание по центру по горизонтали */
+
+  &:hover {
+    background-color: #0056b3 !important;
+  }
+
+  .icon {
+    font-size: 40px; /* Устанавливаем размер иконки */
+    margin-right: 5px; /* Отступ между иконкой и текстом */
+  }
+}
+
+.dropDown {
+  position: absolute;
+  top: 50px; /* Положение окна */
+  right: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Делаем окно поверх карты */
+  padding: 20px;
+  width: 50px; /* Ширина окна */
+  height: 100px;
+
+  .drop-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      margin: 0 0 10px;
+    }
+
+    button {
+      margin-top: 10px;
+      background-color: #5c9ce1;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 12px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+
+    .close {
+      background-color: transparent;
+      color: #333;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+}
+
+material-icons-outlined {
+  font-family: 'Material Icons' !important;
+  z-index: 1000;
+  position: absolute;
+}
+
+.example-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+mat-sidenav {
+  width: 0px; /* Ширина сайдбара */
+}
+
+mat-sidenav-content {
+  flex-grow: 1;
+}
+
+.content {
+  flex-grow: 1;
+}
+

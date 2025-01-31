@@ -1,0 +1,65 @@
+.calendar {
+  width: 555px; /* Установка ширины календаря */
+  margin: 0 auto; /* Центрирование календаря */
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.day {
+  border: 1px solid #ccc;
+  padding: 10px;
+  position: relative;
+}
+
+.date {
+  font-weight: bold;
+}
+
+.week-calendar {
+  width: 100%;
+  max-width: 600px; /* Максимальная ширина для календаря */
+  margin: 0 auto; /* Центрирование */
+}
+
+.week-calendar .schedule-table {
+  width: 555px; /* Ширина таблицы */
+  height: 245px; /* Высота таблицы */
+  border-collapse: collapse; /* Убираем двойные границы */
+  margin: 20px auto; /* Центрирование таблицы */
+}
+
+.week-calendar .schedule-table th,
+.week-calendar .schedule-table td {
+  border: 1px solid black; /* Черные полоски для разделения ячеек */
+  padding: 10px; /* Отступы внутри ячеек */
+  text-align: center; /* Центрирование текста */
+}
+
+.week-calendar .schedule-table th {
+  background-color: #f4f4f4; /* Цвет фона для заголовков */
+}
+
+.week-calendar .schedule-table tr:hover {
+  background-color: #f1f1f1; /* Цвет фона при наведении на строку */
+}
+
+.week-calendar .fio-customer {
+  white-space: pre-line; /* Поддержка переноса строк */
+}
+
+.booking-header {
+  text-align: center;
+  font-size: 20px;
+  margin: 0;
+}

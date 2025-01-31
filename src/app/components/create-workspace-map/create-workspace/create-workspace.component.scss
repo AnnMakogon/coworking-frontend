@@ -1,0 +1,73 @@
+.logo {
+  position: absolute; /* Позволяет располагать плашку поверх карты */
+  top: 10px; /* Отступ сверху */
+  left: 10px; /* Отступ слева */
+  z-index: 1000; /* Убедитесь, что плашка находится поверх карты */
+  width: 250px; /* ширина логотипа и плашки */
+  background-color: #f7f7f7; /* фон логотипа */
+  padding: 20px; /* отступы внутри логотипа */
+  border: 1px solid #ddd; /* границы со всех сторон */
+  text-align: center; /* выравнивание текста по центру */
+}
+
+.container {
+  display: flex; /* Используем Flexbox для центрирования контейнера */
+  justify-content: center; /* Центрируем контейнер по горизонтали */
+  align-items: center; /* Центрируем контейнер по вертикали */
+  height: 100%; /* Высота контейнера 100% */
+}
+
+.content {
+  width: 655px; /* Ширина обрамленной части */
+  height: auto; /* Высота обрамленной части автоматически подстраивается под содержимое */
+  border-left: 4px solid black; /* Левая вертикальная полоса */
+  border-right: 4px solid black; /* Правая вертикальная полоса */
+  padding: 20px; /* Отступы внутри обрамленной части */
+  box-sizing: border-box; /* Учитываем границы в ширине и высоте */
+  display: flex; /* Используем Flexbox для вертикального расположения */
+  flex-direction: column; /* Вертикальное расположение элементов */
+}
+
+.input-container {
+  display: flex; /* Используем Flexbox для вертикального расположения инпутов */
+  flex-direction: column; /* Вертикальное расположение инпутов */
+  gap: 15px; /* Отступы между инпутами */
+  justify-content: center;
+  text-align: center;
+}
+
+.button-container {
+  margin-top: 20px; /* Отступ сверху для кнопок */
+  display: flex; /* Используем Flexbox для расположения кнопок */
+  justify-content: space-between; /* Размещаем кнопки по краям контейнера */
+  align-items: center; /* Центрируем кнопки по вертикали */
+}
+
+.save-button-container {
+  display: flex; /* Используем Flexbox для центрирования кнопки */
+  justify-content: center; /* Центрируем кнопку по горизонтали */
+  margin-top: 20px; /* Отступ сверху для кнопки */
+}
+
+.save-button {
+  width: 200px; /* Ширина кнопки */
+}
+
+.table-container {
+  border: 2px solid black; /* Обрамление контейнера */
+  padding: 10px; /* Внутренний отступ */
+  display: flex; /* Используем Flexbox для центрирования содержимого */
+  flex-direction: column; /* Вертикальное расположение элементов */
+}
+
+h4 {
+  margin: 0; /* Убираем отступы у заголовка */
+  width: 100%; /* Занимаем всю ширину контейнера */
+}
+
+.table-input-container {
+  display: flex; /* Используем Flexbox для вертикального расположения инпутов */
+  flex-direction: column; /* Вертикальное расположение инпутов */
+  gap: 15px; /* Отступы между инпутами */
+  justify-content: center;
+}

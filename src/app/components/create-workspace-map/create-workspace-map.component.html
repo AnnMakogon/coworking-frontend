@@ -1,0 +1,16 @@
+<div class="logo">
+  LOGO
+</div>
+<button mat-raised-button class="material-icons-outlined" style="position: absolute; z-index: 1000; top: 75px;  " (click)="cancel()">arrow_back</button>
+<div class="map-container">
+  <div id="createWorkspaceMap" class="map"></div>
+</div>
+<div class="change-address">
+  <h3 class="address-title"> Сlick on the map or enter the address</h3>
+  <div class="input-button-container">
+    <mat-form-field class="full-width-input">
+      <input matInput type="text" placeholder="Enter the address" [(ngModel)]="currentAddress" required>
+    </mat-form-field>
+    <button mat-raised-button (click)="saveAddress()">Save</button>
+  </div>
+</div>

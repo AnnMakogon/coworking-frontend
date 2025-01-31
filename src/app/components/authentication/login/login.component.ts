@@ -1,4 +1,4 @@
-import { AuthService } from './../../../services/auth-service/auth-service.service';
+import { AuthService } from '../../../services/auth-service.service';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { CredentialLogin } from 'src/app/dto/CredentialLogin';
 import { Router } from '@angular/router';
@@ -31,41 +31,14 @@ export class LoginComponent implements OnInit {
     console.log("Start");
   }
 
-  /*login(): void {
-    this.credentialLogin.email.trim();
-    this.credentialLogin.password.trim();
-
-    this.authService.loginCredential(this.credentialLogin.email, this.credentialLogin.password).subscribe((result: CredentialLogin) => {
-      sessionStorage.setItem("0", JSON.stringify(result));
-      this.router.navigate(['map']);
-    });
-  }*/
-
-  getProtectedData() {  //переход к карте
-    this.authService.getProtectedResource().subscribe(
-      data => {
-        console.log('Protected data:', data);
-      },
-      error => {
-        console.error('Error fetching protected data', error);
-      }
-    );
-  }
   onLogin() {
     this.authService.loginCredential(this.credentialLogin.email, this.credentialLogin.password).subscribe(
       response => {
         console.log('Login successful!', response.token);
         localStorage.setItem('jwt', response.token);
-        console.log(localStorage.getItem('jwt'));
-        this.authService.getProtectedResource().subscribe(
-          response => {
-            console.log('response workspaceGet: ' + response);
-            this.router.navigate(['map']);
-          },
-          error => {
-            console.error('Login failed', error);
-          }
-        );
+        sessionStorage.setItem("0", JSON.stringify(response));
+        console.log(response.role);
+        this.router.navigate(['map/myWorkspaces']);
       },
       error => {
         console.error('Login failed', error);

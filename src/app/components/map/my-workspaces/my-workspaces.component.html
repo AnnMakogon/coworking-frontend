@@ -1,0 +1,39 @@
+<div class="table-container">
+  <div class="mat-elevation-z8 indent" *ngIf="dataSource">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td width="5%" mat-cell *matCellDef="let workspace"> {{workspace.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td width="10%" mat-cell *matCellDef="let workspace"> {{workspace.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td width="70%" mat-cell *matCellDef="let workspace"> {{workspace.address}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td width="15%" mat-cell *matCellDef="let workspace">
+          <button mat-raised-button class="material-icons-outlined" (click)="changeW(workspace)">
+            edit
+          </button>
+          <button mat-raised-button class="material-icons-outlined" (click)="deleteWorkspace(workspace)">
+            delete
+          </button>
+          <button mat-raised-button (click)="getConcreteTables(workspace.id)">Tables</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+  </div>
+</div>

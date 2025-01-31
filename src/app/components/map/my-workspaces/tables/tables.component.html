@@ -1,0 +1,45 @@
+<span style="display: inline-block; width: 30px;"></span>
+<button mat-raised-button class="material-icons-outlined" (click)="cancel()">
+  arrow_back
+</button>
+
+<div class="table-container">
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Number</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let table of tables">
+        <tr>
+          <td>{{ table.id }}</td>
+          <td>{{ table.number }}</td>
+          <td>{{ table.description }}</td>
+          <td>{{ table.price }}</td>
+          <td>
+            <button mat-raised-button class="material-icons-outlined" (click)="changeTable(table)">
+              edit
+            </button>
+            <button mat-raised-button class="material-icons-outlined" (click)="deleteTable(table)">
+              delete
+            </button>
+            <button mat-raised-button (click)="toggleBookings(table.id)">
+              Bookings
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="isBookingsVisible(table.id)">
+          <td colspan="5" class="booking-row">
+            <app-calendar [tableId]="table.id"></app-calendar>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
+

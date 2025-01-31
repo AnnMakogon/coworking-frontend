@@ -1,13 +1,13 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MapComponent } from './components/map/map.component';
 import { LoginComponent } from './components/authentication/login/login.component';
-import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -24,16 +24,32 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 
-
 import { MatIconModule as matIconModule } from '@angular/material/icon';
-
+import { MyWorkspacesComponent } from './components/map/my-workspaces/my-workspaces.component';
+import { TablesComponent } from './components/map/my-workspaces/tables/tables.component';
+import { EditWorkspaceComponent } from './components/map/editWorkspace/editWorkspace.component';
+import { CalendarComponent } from './components/map/my-workspaces/tables/calendar/calendar.component';
+import { UpdateTablesComponent } from './components/dialog-windows/update-Tables/update-Tables.component';
+import { WeekComponent } from './components/map/my-workspaces/tables/calendar/week/week.component';
+import { CreateWorkspaceMapComponent } from './components/create-workspace-map/create-workspace-map.component';
+import { CreateWorkspaceComponent } from './components/create-workspace-map/create-workspace/create-workspace.component';
+import { DeleteWorkspaceComponent } from './components/dialog-windows/delete-Workspace/delete-Workspaces.component';
+import { ErrorInterceptorService } from './components/ErrorInterceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     LoginComponent,
-
+    MyWorkspacesComponent,
+    TablesComponent,
+    EditWorkspaceComponent,
+    CalendarComponent,
+    UpdateTablesComponent,
+    WeekComponent,
+    CreateWorkspaceMapComponent,
+    CreateWorkspaceComponent,
+    DeleteWorkspaceComponent
   ],
   imports: [
     BrowserModule,
@@ -57,10 +73,18 @@ import { MatIconModule as matIconModule } from '@angular/material/icon';
     MatSidenavModule,
     MatListModule,
     matIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatPaginatorModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [RouterModule, ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true }
+  ],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

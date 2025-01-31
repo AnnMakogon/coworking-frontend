@@ -1,0 +1,61 @@
+.map {
+  width: 1200px;
+  height: 730px;
+  flex-grow: 1;
+  background-color: #f0f0f0;
+}
+
+.map-container {
+  display: flex;
+  height: 100%;
+}
+
+.logo {
+  position: absolute; /* Позволяет располагать плашку поверх карты */
+  top: 10px; /* Отступ сверху */
+  left: 10px; /* Отступ слева */
+  z-index: 1000; /* Убедитесь, что плашка находится поверх карты */
+  width: 250px; /* ширина логотипа и плашки */
+  background-color: #f7f7f7; /* фон логотипа */
+  padding: 20px; /* отступы внутри логотипа */
+  border: 1px solid #ddd; /* границы со всех сторон */
+  text-align: center; /* выравнивание текста по центру */
+}
+
+.change-address {
+  position: fixed; /* Фиксированное положение */
+  bottom: 20px; /* Отступ от нижней части экрана */
+  left: 50%; /* Центрируем по горизонтали */
+  transform: translateX(-50%); /* Сдвигаем влево на 50% ширины элемента для центрирования */
+  display: flex; /* Используем Flexbox для выравнивания элементов */
+  flex-direction: column; /* Вертикальное расположение элементов */
+  align-items: center; /* Выравнивание по горизонтали по центру */
+  background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон */
+  padding: 5px; /* Внутренние отступы */
+  border-radius: 5px; /* Закругление углов */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Тень для плашки */
+  width: 455px; /* Ширина плашки */
+  height: 105px; /* Высота плашки */
+}
+
+.address-title {
+  color: #333; /* Темно-серый цвет текста */
+  font-size: 17px; /* Размер шрифта */
+  margin-bottom: 10px; /* Отступ снизу для заголовка */
+  text-align: center; /* Центрирование текста */
+}
+
+.input-button-container {
+  display: flex; /* Используем Flexbox для инпута и кнопки */
+  align-items: center; /* Выравнивание по вертикали по центру */
+  width: 100%; /* Занимает всю ширину плашки */
+}
+
+.full-width-input {
+  flex: 1; /* Позволяет инпуту занимать оставшееся пространство */
+  margin-right: 10px; /* Отступ справа для инпута */
+}
+
+button {
+  margin-left: 10px; /* Отступ слева для кнопки */
+}

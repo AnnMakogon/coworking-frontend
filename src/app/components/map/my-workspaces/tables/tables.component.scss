@@ -1,0 +1,56 @@
+.sidebar {
+  width: 120px;
+  height: 30px;
+  position: absolute;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border: 1px solid #ddd;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.table-container {
+  width: 1000px;
+  height: 100%;//680px;
+  margin: 0 auto;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-table th, .custom-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.custom-table th {
+  background-color: #f4f4f4;
+}
+
+.custom-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.booking-row {
+  background-color: #f9f9f9;
+  text-align: center;
+  border-top: 2px solid #ddd;
+}
+
+.cancel-button {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  margin: 10px;
+}

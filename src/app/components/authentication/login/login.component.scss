@@ -18,21 +18,34 @@ h1.custom-label {
 }
 
 .form-container {
-  background-color:hsl(226, 79%, 66%);
+  background-color: hsl(226, 79%, 66%);
   border-radius: 15px;
   padding: 20px;
   margin: 0 auto;
   max-width: 400px;
 }
 
-.custom-input {
+.form-field {
   width: 100%; /* Занимает всю ширину контейнера */
-  padding: 10px; /* Внутренние отступы */
-  border: 1px solid #ccc; /* Цвет рамки */
-  border-radius: 8px; /* Закругленные углы */
-  background-color: white; /* Белый фон */
-  font-size: 16px; /* Размер шрифта */
   margin-bottom: 16px; /* Отступ между инпутами */
+}
+
+label {
+  display: block; /* Отображение лейбла как блочного элемента */
+  font-size: 14px; /* Размер шрифта лейбла */
+  color: #333; /* Цвет текста лейбла */
+  margin-bottom: 4px; /* Отступ снизу */
+  font-weight: bold; /* Жирный шрифт */
+}
+
+.custom-input {
+  width: 350px; /* Ширина инпута */
+  height: 50px; /* Высота инпута */
+  font-size: 16px; /* Размер шрифта */
+  border-radius: 10px 10px 0 0; /* Закругление верхних углов */
+  border: 1px solid #ccc; /* Цвет рамки */
+  padding: 10px; /* Внутренние отступы */
+  box-sizing: border-box; /* Учитывать отступы и рамки в ширине и высоте */
   transition: border-color 0.3s; /* Плавный переход для цвета рамки */
 }
 

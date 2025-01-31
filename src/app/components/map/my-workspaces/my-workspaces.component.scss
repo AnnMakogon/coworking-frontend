@@ -1,0 +1,20 @@
+.table-container {
+  width: 300px;
+  height: 660px;
+  padding: 0; /* Убираем отступы внутри контейнера */
+  box-sizing: border-box; /* Включаем box-sizing: border-box, чтобы ширина и высота учитывали границы и отступы */
+}
+
+.table-container table {
+  width: 100%; /* Ширина таблицы равна ширине контейнера */
+  height: 100%; /* Высота таблицы равна высоте контейнера */
+}
+
+.table-container th,
+.table-container td {
+  padding: 8px; /* Уменьшаем отступы внутри ячеек таблицы */
+}
+
+.mat-elevation-z8 {
+  width: 100%; /* Таблица занимает 100% ширины контейнера */
+}

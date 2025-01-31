@@ -1,16 +1,16 @@
 <h1 class="custom-label">{{ title }}</h1>
 <form (ngSubmit)="onLogin()" #loginForm="ngForm" class="form-container">
   <div class="container">
-    <mat-form-field appearance="fill">
-      <mat-label>Enter Email</mat-label>
-      <input matInput type="text" [(ngModel)]="credentialLogin.email" name="email" required>
-    </mat-form-field>
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input type="text" id="email" [(ngModel)]="credentialLogin.email" name="email" required class="custom-input">
+    </div>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Enter Password</mat-label>
-      <input matInput type="password" [(ngModel)]="credentialLogin.password" name="password" required>
-    </mat-form-field>
+    <div class="form-field">
+      <label for="password">Password</label>
+      <input type="password" id="password" [(ngModel)]="credentialLogin.password" name="password" required class="custom-input">
+    </div>
 
-    <button mat-raised-button color="warn" type="submit" [disabled]="loginForm.invalid">Login</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
   </div>
 </form>

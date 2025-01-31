@@ -1,0 +1,53 @@
+<div class="logo">
+  LOGO
+</div>
+<button mat-raised-button class="material-icons-outlined" style="position: absolute; z-index: 1000; top: 75px;  "
+  (click)="cancel()">arrow_back</button>
+
+
+<div class="container">
+  <div class="content">
+    <div class="input-container"><!--по центру делает-->
+      <h2>Enter Data about new workspace</h2>
+      <mat-form-field class="full-width-input">
+        <input matInput type="text" placeholder="Name of new workspace" [(ngModel)]="name" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width-input">
+        <input matInput type="text" placeholder="Description of new workspace" [(ngModel)]="description" required>
+      </mat-form-field>
+
+      <!--Photo-->
+
+    </div>
+    <h3>Tables:</h3>
+    <div class="table-container" *ngFor="let table of tables; let i = index">
+      <h4>{{ i + 1 }}.</h4>
+      <div class="table-input-container">
+
+        <mat-form-field class="full-width-input">
+          <input matInput type="number" placeholder="Number" [(ngModel)]="table.number" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width-input">
+          <input matInput type="text" placeholder="Description" [(ngModel)]="table.description" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width-input">
+          <input matInput type="number" placeholder="Price" [(ngModel)]="table.price" required>
+        </mat-form-field>
+
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button mat-raised-button color="primary" type="submit" (click)="addTable()" *ngIf="tables.length < 10">+ Table</button>
+      <button mat-raised-button (click)="removeTable()" [disabled]="tables.length <= 1">- Table</button>
+    </div>
+
+    <div class="save-button-container">
+      <button mat-raised-button color="primary" type="submit" class="save-button" (click)="addWorkspace()">Save</button>
+    </div>
+
+  </div>
+</div>
