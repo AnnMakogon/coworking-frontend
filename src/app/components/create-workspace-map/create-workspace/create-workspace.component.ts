@@ -15,21 +15,21 @@ export class CreateWorkspaceComponent implements OnInit {
 
   persUser: CredentialUser;
 
-  address: string ="";
-  coordinates: { lat: number; lng: number; } = {lat: 0, lng: 0};
+  address: string = "";
+  coordinates: { lat: number; lng: number; } = { lat: 0, lng: 0 };
 
   name: string = "";
   description: string = "";
   photo: string = "";
 
-  tables: Table[] = [{id: null, number: 1, description: '', price: 0 }];
+  tables: Table[] = [{ id: null, number: 1, description: '', price: 0, bookings: [], workspace : new Workspace()}];
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
     private workspaceService: WorkspaceService
   ) {
     this.persUser = new CredentialUser();
-   }
+  }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
@@ -47,25 +47,27 @@ export class CreateWorkspaceComponent implements OnInit {
     console.log(this.persUser.id);
   }
 
-  cancel(){
+  cancel() {
     this.router.navigate(['createWorkspaceMap']);
   }
 
-  addWorkspace(){
+  addWorkspace() {
     console.log(this.tables);
-    const newWorkspace: WorkspaceCreate = {id: null, name: this.name, description: this.description, address: this.address,
+    const newWorkspace: WorkspaceCreate = {
+      id: null, name: this.name, description: this.description, address: this.address,
       latitude: this.coordinates.lat, longitude: this.coordinates.lng,
-      tables: this.tables, credentialId: this.persUser.id}
-      debugger;
-    this.workspaceService.addWorkspace(newWorkspace).subscribe(() =>{
+      tables: this.tables, credentialId: this.persUser.id
+    }
+    debugger;
+    this.workspaceService.addWorkspace(newWorkspace).subscribe(() => {
       console.log("succesful Save workspace " + newWorkspace.name);
       this.router.navigate(['map/myWorkspaces']);
     });
   }
 
-  addTable(){
-    if (this.tables.length < 10){
-      const newTable: Table = {id: null, number: this.tables.length + 1, description: '', price: 0};
+  addTable() {
+    if (this.tables.length < 10) {
+      const newTable: Table = { id: null, number: this.tables.length + 1, description: '', price: 0 , bookings: [], workspace : new Workspace()};
       this.tables.push(newTable);
     }
   }

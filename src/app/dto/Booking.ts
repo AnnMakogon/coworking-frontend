@@ -1,9 +1,13 @@
+import { Table } from "./Table";
+
 export class Booking {
-  constructor(){
+  constructor() {
     this.id = null;
-    this.date = "";
+    this.date = new Date();
+    this.table = null;
   }
 
   id: number | null;
-  date: string;
+  date: Date;
+  table: Table | null;
 }

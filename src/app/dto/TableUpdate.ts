@@ -1,5 +1,5 @@
 export class TableUpdate {
-  constructor(){
+  constructor() {
     this.id = null;
     this.description = "";
     this.price = null;

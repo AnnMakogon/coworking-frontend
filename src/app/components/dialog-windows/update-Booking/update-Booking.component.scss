@@ -1,0 +1,71 @@
+.right-align {
+  margin: 0 0 0 auto !important;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  font-weight: bold;
+}
+
+.available-day {
+  color: green; /* Цвет для доступных дней */
+}
+
+///////////
+.calendar {
+  margin-top: 20px; /* Отступ сверху для календаря */
+}
+
+.calendar-header {
+  display: flex; /* Используем flexbox для выравнивания */
+  align-items: center; /* Вертикальное центрирование */
+  justify-content: center; /* Центрируем элементы по горизонтали */
+  margin-bottom: 10px; /* Отступ снизу для заголовка */
+}
+
+.month-title {
+  margin: 0 10px; /* Отступы слева и справа от названия месяца */
+  font-size: 20px; /* Размер шрифта для названия месяца */
+  font-weight: bold; /* Жирный шрифт для выделения */
+}
+
+.calendar-grid {
+  display: grid; /* Используем CSS Grid для создания сетки */
+  grid-template-columns: repeat(7, 1fr); /* 7 столбцов для дней недели */
+  gap: 5px; /* Отступ между ячейками */
+}
+
+.day {
+  width: 40px; /* Ширина ячейки дня */
+  height: 40px; /* Высота ячейки дня */
+  border: 1px solid #ddd; /* Граница ячейки */
+  display: flex; /* Используем flexbox для центрирования текста */
+  align-items: center; /* Вертикальное центрирование */
+  justify-content: center; /* Горизонтальное центрирование */
+  cursor: pointer; /* Указатель при наведении */
+}
+
+.day:hover {
+  background-color: #f0f0f0; /* Цвет при наведении на день */
+}
+
+.occupied {
+  background-color: #ffcccc; /* Цвет фона для занятых дней */
+  text-decoration: line-through; /* Зачеркивание текста */
+  color: #999; /* Цвет текста для занятых дней */
+}
+
+.selected {
+  background-color: #007bff; /* Синий цвет фона для выбранного дня */
+  color: white; /* Белый цвет текста для выбранного дня */
+}
+
+.occupied-text {
+  font-size: 12px; /* Размер текста для занятых дней */
+  text-align: center; /* Центрирование текста */
+}

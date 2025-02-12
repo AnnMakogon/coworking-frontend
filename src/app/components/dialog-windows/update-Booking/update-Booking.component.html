@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Apdate Table</h1>
+<div class="calendar">
+  <header>
+    <button mat-raised-button class="material-icons-outlined" (click)="changeMonth(-1)">
+      arrow_back_ios
+    </button>
+    <h2>{{ months[selectedDate.getMonth()] }} {{ selectedDate.getFullYear() }}</h2>
+    <button mat-raised-button class="material-icons-outlined" (click)="changeMonth(1)">
+      arrow_forward_ios
+    </button>
+  </header>
+
+  <div class="calendar-grid">
+    <div class="day" *ngFor="let day of getDaysInMonth()"
+         (click)="!isEventDay(day) ? selectDate(day) : null"
+         [ngClass]="{
+           'occupied': isEventDay(day),
+           'selected': selectedDate && selectedDate.getTime() === day.getTime()
+         }">
+      <div class="date">{{ day.getDate() }}</div>
+      <div *ngIf="isEventDay(day)" class="occupied-text">BUSY</div>
+    </div>
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">Cancel</button>
+  <button class="right-align" mat-raised-button color="primary" [mat-dialog-close]="editingBooking">Update</button>
+</div>

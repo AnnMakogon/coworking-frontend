@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Workspace } from '../dto/Workspace';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Page } from '../dto/Page';
 
 @Injectable({
@@ -22,8 +22,14 @@ export class WorkspaceService {
     return token ? new HttpHeaders({ 'Authorization': `Bearer ${token}` }) : new HttpHeaders();
   }
 
-  getWorkspaces(id: number): Observable<Page<Workspace>> {
+  getWorkspacesManager(id: number): Observable<Page<Workspace>> {
     return this.http.get<Page<Workspace>>("api/workspaceManager/" + id.toString(), {
+      headers: this.getAuthHeaders()
+    }).pipe();
+  }
+
+  getWorkspacesCustomer(): Observable<Page<Workspace>>{
+    return this.http.get<Page<Workspace>>("api/workspaceCustomer", {
       headers: this.getAuthHeaders()
     }).pipe();
   }
@@ -36,7 +42,7 @@ export class WorkspaceService {
     }).pipe();
   }
 
-  addWorkspace(newWorkspace: Workspace): Observable<void>{
+  addWorkspace(newWorkspace: Workspace): Observable<void> {
     console.log("create new Workspace " + newWorkspace.name)
     return this.http.post<void>("api/newworkspace", newWorkspace, {
       headers:
@@ -44,11 +50,18 @@ export class WorkspaceService {
     }).pipe();
   }
 
-  deleteWorkspace(id: number): Observable<void>{
+  deleteWorkspace(id: number): Observable<void> {
     return this.http.delete<void>("api/workspace/" + id, {
       headers:
-      this.getAuthHeaders().set('Content-Type', 'application/json')
-  }).pipe();
+        this.getAuthHeaders().set('Content-Type', 'application/json')
+    }).pipe();
+  }
+
+  getDetails(id: number): Observable<Workspace> {
+    return this.http.get<Workspace>("api/workspaceConcrete/" + id, {
+      headers:
+        this.getAuthHeaders().set('Content-Type', 'application/json')
+    }).pipe();
   }
 
 }

@@ -10,18 +10,18 @@ import { Router } from '@angular/router';
 })
 export class CreateWorkspaceMapComponent implements OnInit {
 
-  persUser: CredentialUser ;
+  persUser: CredentialUser;
   map: any;
 
-  currentCoordinates: {lat: number; lng: number} | null = null;
+  currentCoordinates: { lat: number; lng: number } | null = null;
 
   currentAddress: string = "";
   currentBalloon: any = null;
 
   constructor(private changeDetectorRef: ChangeDetectorRef,
-                  private router: Router,
+    private router: Router,
   ) {
-    this.persUser= new CredentialUser();
+    this.persUser = new CredentialUser();
   }
 
   ngOnInit() {
@@ -58,11 +58,11 @@ export class CreateWorkspaceMapComponent implements OnInit {
         this.map.events.add('click', async (event: any) => {
           const coords = event.get('coords');
 
-          try{
+          try {
             this.currentAddress = await this.getAddressFromCoordinates(coords[0], coords[1]);
-            this.currentCoordinates = {lat: coords[0], lng: coords[1]};
+            this.currentCoordinates = { lat: coords[0], lng: coords[1] };
             this.changeDetectorRef.detectChanges();
-            console.log("Address: " + this.currentAddress + "\n Coordinates: " + this.currentCoordinates );
+            console.log("Address: " + this.currentAddress + "\n Coordinates: " + this.currentCoordinates);
 
             if (this.currentBalloon) {
               this.map.geoObjects.remove(this.currentBalloon);
@@ -92,11 +92,11 @@ export class CreateWorkspaceMapComponent implements OnInit {
   saveAddress() {
     console.log("Save Address: " + this.currentAddress);
     this.router.navigate(['createWorkspace', this.currentAddress,
-                          this.currentCoordinates?.lat,
-                          this.currentCoordinates?.lng]);
+      this.currentCoordinates?.lat,
+      this.currentCoordinates?.lng]);
   }
 
-  cancel(){
+  cancel() {
     this.router.navigate(['map/myWorkspaces']);
   }
 

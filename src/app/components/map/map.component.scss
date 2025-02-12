@@ -13,7 +13,7 @@
 .logo-sidebar {
   display: flex;
   flex-direction: column;
-  width: 350px; /* ширина логотипа и плашки */
+  width: 372px; /* ширина логотипа и плашки */
 }
 
 .logo {
@@ -89,8 +89,8 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000; /* Делаем окно поверх карты */
   padding: 20px;
-  width: 50px; /* Ширина окна */
-  height: 100px;
+  width: 70px; /* Ширина окна */
+  height: 140px;
 
   .drop-content {
     display: flex;

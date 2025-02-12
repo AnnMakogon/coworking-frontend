@@ -22,8 +22,9 @@
   </div>
   <div id="map" class="map"></div>
 
-  <button class="create-workspace-button" mat-raised-button (click)="createWorkspace()">Create workspace</button>
-
+  <ng-container *ngIf="persUser.role == 'MANAGER'">
+    <button class="create-workspace-button" mat-raised-button (click)="createWorkspace()">Create workspace</button>
+  </ng-container>
   <button class="info-button" mat-raised-button (click)="dropDownWindow()">
     <span class="icon">account_circle</span>
   </button>
@@ -32,6 +33,10 @@
     <div class="drop-content">
       <button (click)="logout()" class="material-icons"> logout</button>
       <button class="material-icons-outlined" (click)="dropDownWindow()">close</button>
+      <ng-container *ngIf="persUser.role == 'CUSTOMER'">
+        <button mat-raised-button (click)="myBookings()">My Bookings</button>
+      </ng-container>
+
     </div>
   </div>
 </div>

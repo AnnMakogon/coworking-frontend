@@ -1,7 +1,7 @@
 import { Table } from "./Table";
 
 export class Workspace {
-  constructor(){
+  constructor() {
     this.id = null;
     this.name = "";
     this.description = "";

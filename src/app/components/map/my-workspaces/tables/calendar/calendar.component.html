@@ -28,40 +28,5 @@
   </mat-tab>
   <mat-tab label="Week">
     <app-week [tableId]="tableId"></app-week>
-    <!--<div class="calendar week-calendar">
-      <header>
-        <button mat-raised-button class="material-icons-outlined" (click)="changeWeek(-1)">
-          arrow_back_ios
-        </button>
-        <h2>{{ getWeekHeader() }}</h2>
-        <button mat-raised-button class="material-icons-outlined" (click)="changeWeek(1)">
-          arrow_forward_ios
-        </button>
-      </header>
-
-      <table class="schedule-table">
-        <thead>
-          <tr>
-            <th>Time</th>
-            <th *ngFor="let day of daysOfWeek">{{day}}</th>
-          </tr>
-          <tr>
-            <th></th>
-            <th *ngFor="let day of getDaysInWeek()">{{ day.getDate() }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let timeSlot of timeSlots">
-            <td>{{ timeSlot }}</td>
-            <td *ngFor="let day of getDaysInWeek()">
-              <div class="fio-customer">
-                {{ getFioCustomerWeek(day, timeSlot) }}
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>-->
   </mat-tab>
 </mat-tab-group>

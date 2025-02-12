@@ -1,27 +1,27 @@
-# Coworking
+# Coworking - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+## Описание
 
-## Development server
+Coworking App — это веб-приложение, разработанное на Angular, которое позволяет пользователям (Customer) выбирать рабочие пространства и бронировать столики на определенные даты. Менеджеры (Manager) могут управлять своими рабочими пространствами, создавая, редактируя и удаляя их. Приложение также включает функциональный календарь для отображения доступных дат и интеграцию с картой Яндекса.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Функциональность
 
-## Code scaffolding
+- **Роли пользователей**:
+  - **Кастомер**: 
+    - Выбор рабочего пространства.
+    - Бронирование столиков на выбранные даты.
+    - Просмотр доступных дат через функциональный календарь.
+  - **Менеджер**: 
+    - Создание, редактирование и удаление своих рабочих пространств.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Карта**: Интеграция с картой Яндекса для отображения рабочих пространств.
 
-## Build
+- **Функциональный календарь**: Позволяет пользователям выбирать доступные даты для бронирования.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Технологии
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Angular**: Основной фреймворк для разработки приложения.
+- **Angular Material**: Используется для создания пользовательского интерфейса с готовыми компонентами.
+- **Reactive Forms**: Для работы с формами и валидацией.
+- **Docker**: Упаковка приложения для удобного развертывания.
+- **Яндекс.Карты**: Для отображения рабочих пространств на карте.

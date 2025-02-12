@@ -18,15 +18,22 @@
       </ng-container>
 
       <ng-container matColumnDef="action">
+
         <th mat-header-cell *matHeaderCellDef> Actions </th>
         <td width="15%" mat-cell *matCellDef="let workspace">
-          <button mat-raised-button class="material-icons-outlined" (click)="changeW(workspace)">
-            edit
-          </button>
-          <button mat-raised-button class="material-icons-outlined" (click)="deleteWorkspace(workspace)">
-            delete
-          </button>
-          <button mat-raised-button (click)="getConcreteTables(workspace.id)">Tables</button>
+          <ng-container *ngIf="persUser.role == 'MANAGER'">
+            <button mat-raised-button class="material-icons-outlined" (click)="changeW(workspace)">
+              edit
+            </button>
+            <button mat-raised-button class="material-icons-outlined" (click)="deleteWorkspace(workspace)">
+              delete
+            </button>
+            <button mat-raised-button (click)="getConcreteTables(workspace.id)">Tables</button>
+          </ng-container>
+
+          <ng-container *ngIf="persUser.role == 'CUSTOMER'">
+            <button mat-raised-button (click)="selectTable(workspace.id)">Select</button>
+          </ng-container>
         </td>
       </ng-container>
 

@@ -26,4 +26,10 @@ export class MapServiceService {
     }).pipe();
   }
 
+  getConcretePoint(idCredential: number): Observable<any> {
+    return this.http.get('/api/workspaceToMyBooking/' + idCredential, {
+      headers: this.getAuthHeaders()
+    }).pipe();
+  }
+
 }

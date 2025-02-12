@@ -9,10 +9,10 @@ export class CoordinatService {
   private addressSourse = new BehaviorSubject<string>('');
   currentAddress = this.addressSourse.asObservable();
 
-  private coordinatesSource = new BehaviorSubject<{lat: number | null; lng: number | null; address: string}>({lat: null, lng: null, address: ""});
+  private coordinatesSource = new BehaviorSubject<{ lat: number | null; lng: number | null; address: string }>({ lat: null, lng: null, address: "" });
   currentCoordinates = this.coordinatesSource.asObservable();
 
-  updateCoordinates(coords: {lat: number | null; lng: number | null; address: string}) {
+  updateCoordinates(coords: { lat: number | null; lng: number | null; address: string }) {
     this.coordinatesSource.next(coords);
   }
 

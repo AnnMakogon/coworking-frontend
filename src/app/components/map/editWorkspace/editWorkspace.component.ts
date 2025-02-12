@@ -16,11 +16,11 @@ export class EditWorkspaceComponent implements OnInit, OnChanges {
   private isSubscribed: boolean = false;
 
   constructor(private route: ActivatedRoute,
-              private coordinateService: CoordinatService,
-              private router: Router,
-              private workspaceService: WorkspaceService,
-              private mapComponent: MapComponent,
-              private cdr: ChangeDetectorRef) { }
+    private coordinateService: CoordinatService,
+    private router: Router,
+    private workspaceService: WorkspaceService,
+    private mapComponent: MapComponent,
+    private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     sessionStorage.setItem("editW", JSON.stringify(true));
@@ -36,7 +36,6 @@ export class EditWorkspaceComponent implements OnInit, OnChanges {
     }
     this.mapComponent.addressSelected.subscribe(address => {
       this.workspace.address = address;
-      debugger;
       console.log("Address from mapComponent: " + address);
       this.cdr.detectChanges();
     });
@@ -57,12 +56,12 @@ export class EditWorkspaceComponent implements OnInit, OnChanges {
     this.workspace.address = this.coordinates.address;
   }
 
-  cancel(){
+  cancel() {
     this.router.navigate(['map/myWorkspaces']);
     sessionStorage.setItem("editW", JSON.stringify(false));
   }
 
-  editWorkspaceToDB(){
+  editWorkspaceToDB() {
     this.workspace.address = this.coordinates.address;
     this.workspace.latitude = this.coordinates.lat;
     this.workspace.longitude = this.coordinates.lng;

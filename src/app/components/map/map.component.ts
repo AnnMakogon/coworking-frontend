@@ -73,7 +73,7 @@ export class MapComponent implements OnInit {
         });
         this.map.controls.add(zoomControl); //контроллер зума
 
-        this.addPointsToMap();
+        this.addPointsToMap(); // установка всех точек
 
         //далее все для постановки временной точки
         this.map.events.add('click', (event: any) => {
@@ -123,7 +123,6 @@ export class MapComponent implements OnInit {
 
             if (this.currentPoint) {
               this.currentPoint.geometry.setCoordinates(coords);
-              debugger;
             } else {
               this.currentPoint = new (window as any).ymaps.Placemark(coords, {
                 balloonContent: `Coordinates: ${coords[0]}, ${coords[1]}`,
@@ -131,7 +130,6 @@ export class MapComponent implements OnInit {
                   id: sessionStorage.getItem("idEditWorkspace")
                 }
               });
-              debugger;
               this.map.geoObjects.add(this.currentPoint);
             }
           }
@@ -140,7 +138,7 @@ export class MapComponent implements OnInit {
       });
     }
   }
-// установка изначальных всех точек
+  // установка изначальных всех точек
   private addPointsToMap(): void {
     this.getProtectedData().subscribe(data => { //точки на карте (все)
       console.log(data);
@@ -204,6 +202,10 @@ export class MapComponent implements OnInit {
   createWorkspace(): void {
     console.log("router navigate create Workspace");
     this.router.navigate(['/createWorkspaceMap']);
+  }
+
+  myBookings(): void {
+    this.router.navigate(['/myBookingsMap/']);
   }
 
 }

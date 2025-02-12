@@ -31,7 +31,7 @@ export class WeekComponent implements OnInit {
     const startOfWeek = this.getStartOfWeek(this.selectedDate);
     const endOfWeek = this.getEndOfWeek(this.selectedDate);
 
-    if (this.tableId){
+    if (this.tableId) {
       this.calendarService.getDataForWeek(this.tableId, startOfWeek, endOfWeek).subscribe((data) => {
         this.events = [];  //ЗАГЛУШКА
       });
@@ -47,7 +47,7 @@ export class WeekComponent implements OnInit {
   getDaysInWeek(): Date[] {
     const startOfWeek = this.getStartOfWeek(this.selectedDate);
     return Array.from({ length: 7 }, (_, i) =>
-    new Date(startOfWeek.getFullYear(), startOfWeek.getMonth(), startOfWeek.getDate() + i));
+      new Date(startOfWeek.getFullYear(), startOfWeek.getMonth(), startOfWeek.getDate() + i));
   }
 
   //начало недели

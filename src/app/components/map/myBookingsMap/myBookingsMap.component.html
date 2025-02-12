@@ -1,0 +1,25 @@
+<div class="map-container">
+  <div class="logo-sidebar">
+    <div class="logo">
+      <button mat-raised-button class="material-icons-outlined back-button" (click)="cancel()">arrow_back</button>
+      <span class="logo-text">LOGO</span>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-content">
+        <mat-sidenav-container class="example-container">
+          <mat-sidenav mode="side" opened>
+            <mat-nav-list>
+              <a mat-list-item routerLink="myBookings"></a>
+            </mat-nav-list>
+          </mat-sidenav>
+          <mat-sidenav-content>
+            <div class="content">
+              <router-outlet></router-outlet>
+            </div>
+          </mat-sidenav-content>
+        </mat-sidenav-container>
+      </div>
+    </div>
+  </div>
+  <div id="map" class="map"></div>
+</div>

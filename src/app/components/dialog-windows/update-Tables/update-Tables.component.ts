@@ -12,9 +12,9 @@ export class UpdateTablesComponent implements OnInit {
   editingTable: TableUpdate;
 
   constructor(public dialogRef: MatDialogRef<UpdateTablesComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: TableUpdate ) {
-      this.editingTable = data;
-    }
+    @Inject(MAT_DIALOG_DATA) public data: TableUpdate) {
+    this.editingTable = data;
+  }
 
   ngOnInit(): void {
   }

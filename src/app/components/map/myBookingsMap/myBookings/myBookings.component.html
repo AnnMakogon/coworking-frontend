@@ -1,0 +1,43 @@
+<div class="table-container">
+  <div class="mat-elevation-z8 indent" *ngIf="dataSource">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td width="10%" mat-cell *matCellDef="let booking"> {{booking.table.workspace.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td width="70%" mat-cell *matCellDef="let booking"> {{booking.table.workspace.address}} </td>
+      </ng-container>
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td width="70%" mat-cell *matCellDef="let booking"> {{booking.date}} </td>
+      </ng-container>
+      <ng-container matColumnDef="number">
+        <th mat-header-cell *matHeaderCellDef> Number </th>
+        <td width="70%" mat-cell *matCellDef="let booking"> {{booking.table.number}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td width="15%" mat-cell *matCellDef="let booking">
+            <button mat-raised-button class="material-icons-outlined" (click)="change(booking)">
+              edit
+            </button>
+            <button mat-raised-button class="material-icons-outlined" (click)="delete(booking)">
+              delete
+            </button>
+
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+  </div>
+</div>

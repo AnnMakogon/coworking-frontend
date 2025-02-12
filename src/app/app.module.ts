@@ -35,6 +35,12 @@ import { CreateWorkspaceMapComponent } from './components/create-workspace-map/c
 import { CreateWorkspaceComponent } from './components/create-workspace-map/create-workspace/create-workspace.component';
 import { DeleteWorkspaceComponent } from './components/dialog-windows/delete-Workspace/delete-Workspaces.component';
 import { ErrorInterceptorService } from './components/ErrorInterceptor';
+import { WorkspaceDetailsComponent } from './components/map/workspace-details/workspace-details.component';
+import { BookingComponent } from './components/map/workspace-details/booking/booking.component';
+import { MyBookingsMapComponent } from './components/map/myBookingsMap/myBookingsMap.component';
+import { MyBookingsComponent } from './components/map/myBookingsMap/myBookings/myBookings.component';
+import { UpdateBookingComponent } from './components/dialog-windows/update-Booking/update-Booking.component';
+import { DeleteBookingComponent } from './components/dialog-windows/delete-Booking/delete-Booking.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +55,13 @@ import { ErrorInterceptorService } from './components/ErrorInterceptor';
     WeekComponent,
     CreateWorkspaceMapComponent,
     CreateWorkspaceComponent,
-    DeleteWorkspaceComponent
+    DeleteWorkspaceComponent,
+    WorkspaceDetailsComponent,
+    BookingComponent,
+    MyBookingsMapComponent,
+    MyBookingsComponent,
+    UpdateBookingComponent,
+    DeleteBookingComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +92,7 @@ import { ErrorInterceptorService } from './components/ErrorInterceptor';
     MatFormFieldModule,
     MatInputModule
   ],
-  exports: [RouterModule, ],
+  exports: [RouterModule],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true }
   ],

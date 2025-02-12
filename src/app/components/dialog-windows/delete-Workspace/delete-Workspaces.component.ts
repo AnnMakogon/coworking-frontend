@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -11,7 +11,7 @@ export class DeleteWorkspaceComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<DeleteWorkspaceComponent>) {
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   noDel(): void {
     this.dialogRef.close(false);

@@ -1,11 +1,11 @@
 export class CredentialUser {
-  constructor(){
-    this.id = null;
+  constructor() {
+    this.id = 0;
     this.role = "";
     this.fio = "";
   }
 
-  id: number|null;
+  id: number ;
   role: String;
   fio: String;
 }

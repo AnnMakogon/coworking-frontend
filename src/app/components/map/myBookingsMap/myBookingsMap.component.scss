@@ -1,0 +1,85 @@
+.map {
+  width: 1200px;
+  height: 730px;
+  flex-grow: 1;
+  background-color: #f0f0f0;
+}
+
+.map-container {
+  display: flex;
+  height: 100%;
+}
+
+.logo-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 372px; /* ширина логотипа и плашки */
+  height: 725px;
+}
+
+.logo00000 {
+  background-color: #f7f7f7; /* фон логотипа */
+  padding: 20px; /* отступы внутри логотипа */
+  border: 1px solid #ddd; /* границы со всех сторон */
+  text-align: center; /* выравнивание текста по центру */
+}
+
+.logo {
+  display: flex; /* Используем Flexbox для выравнивания */
+  align-items: center; /* Выравнивание по вертикали */
+  justify-content: center; /* Центрируем содержимое по горизонтали */
+  position: relative; /* Устанавливаем относительное позиционирование для кнопки */
+  background-color: #f7f7f7; /* фон логотипа */
+  padding: 20px; /* отступы внутри логотипа */
+  border: 1px solid #ddd; /* границы со всех сторон */
+  height: 100px; /* Установите высоту по вашему усмотрению */
+}
+
+.back-button {
+  position: absolute; /* Абсолютное позиционирование для кнопки */
+  left: calc(50% - 115px); /* Сдвигаем кнопку на 30px влево от центра */
+  transform: translateX(-100%); /* Сдвигаем кнопку на ширину самой кнопки */
+}
+
+.logo-text {
+  margin-left: 30px; /* Отступ между кнопкой и текстом */
+}
+
+.sidebar {
+   /*flex: 1; занимает оставшееся пространство */
+  width: 370px;
+  height: 100%;
+  background-color: #f7f7f7; /* фон плашки */
+  border: 1px solid #ddd; /* границы со всех сторон */
+}
+
+.sidebar-content {
+  width: 370px;
+  height: 100%;
+}
+
+material-icons-outlined {
+  font-family: 'Material Icons' !important;
+  z-index: 1000;
+  position: absolute;
+}
+
+.example-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+mat-sidenav {
+  width: 0px; /* Ширина сайдбара */
+}
+
+mat-sidenav-content {
+  flex-grow: 1;
+}
+
+.content {
+  flex-grow: 1;
+}
+

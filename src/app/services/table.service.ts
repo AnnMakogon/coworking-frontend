@@ -19,11 +19,11 @@ export class TableService {
   }
 
   private getAuthHeaders(): HttpHeaders {
-   const token = this.getToken();
-   return token ? new HttpHeaders({ 'Authorization': `Bearer ${token}` }) : new HttpHeaders();
+    const token = this.getToken();
+    return token ? new HttpHeaders({ 'Authorization': `Bearer ${token}` }) : new HttpHeaders();
   }
 
-  getTable(id: number): Observable<Page<Table>>{
+  getTable(id: number): Observable<Page<Table>> {
     return this.http.get<Page<Table>>("api/table/" + id, {
       headers: this.getAuthHeaders()
     }).pipe();

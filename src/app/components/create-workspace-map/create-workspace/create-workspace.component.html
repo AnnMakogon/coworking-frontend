@@ -7,7 +7,7 @@
 
 <div class="container">
   <div class="content">
-    <div class="input-container"><!--по центру делает-->
+    <div class="input-container">
       <h2>Enter Data about new workspace</h2>
       <mat-form-field class="full-width-input">
         <input matInput type="text" placeholder="Name of new workspace" [(ngModel)]="name" required>
@@ -41,7 +41,8 @@
     </div>
 
     <div class="button-container">
-      <button mat-raised-button color="primary" type="submit" (click)="addTable()" *ngIf="tables.length < 10">+ Table</button>
+      <button mat-raised-button color="primary" type="submit" (click)="addTable()" *ngIf="tables.length < 10">+
+        Table</button>
       <button mat-raised-button (click)="removeTable()" [disabled]="tables.length <= 1">- Table</button>
     </div>
 
